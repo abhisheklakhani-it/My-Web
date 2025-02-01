@@ -10,19 +10,27 @@ const Home = () => {
           <TextChange />
         </h1>
         <p className="text-sm md:text-2xl tracking-tight">
-          Passionate **Software Developer** skilled in **Web Development, Data Science, and IoT**. 
-          Currently pursuing a **Master’s in Automotive Software Engineering at TU Chemnitz**.
+          Passionate software developer specializing in web development, data
+          science, and IoT. Currently pursuing a Master's in Automotive Software
+          Engineering at TU Chemnitz.
         </p>
         <p className="text-sm md:text-2xl tracking-tight mt-2">
-          Experienced in **React.js, JavaScript, Python, PHP, and Machine Learning**. 
-          Enthusiastic about **innovation, AI, and entrepreneurship**.
+          Skilled in React.js, JavaScript, Python, PHP, and machine learning.
+          Enthusiastic about innovation, AI, and entrepreneurship.
         </p>
-        <button className="mt-5 md:mt-10 text-white py-2 px-3 text-sm md:text-lg md:py-2 md:px-4 hover:opacity-85 duration-300 hover:scale-105 font-semibold rounded-3xl bg-[#465697]">
-          Contact Me
-        </button>
+
+        {/* Contact Me Button with Smooth Scroll */}
+        <a href="#Footer" className="block">
+          <button
+            className="mt-5 md:mt-10 text-white py-2 px-3 text-sm md:text-lg md:py-2 md:px-4 
+            hover:opacity-85 transition-all duration-300 hover:scale-105 font-semibold rounded-3xl bg-[#465697]"
+          >
+            Contact Me
+          </button>
+        </a>
       </div>
       <div>
-        <img className="md:w-80" src={avatarImg} alt="Avatar" />
+        <img className="md:w-80" src={avatarImg} alt="Profile Avatar" />
       </div>
     </div>
   );

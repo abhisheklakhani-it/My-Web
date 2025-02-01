@@ -1,33 +1,39 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
+
 const TextChange = () => {
-  const texts = ["Hi, I'm Abhishek", "Hi, I'm Abhishek", "Hi, I'm Abhishek"];
-  const [currenText, setCurrentText] = useState("");
-  const [endValue, setendValue] = useState(true);
-  const [isForward, setIsForward] = useState(true);
+  const texts = [
+    "Hi, I'm Abhishek",
+    "Welcome to my Portfolio",
+    "Let's build something great!",
+  ];
+  const [currentText, setCurrentText] = useState("");
   const [index, setIndex] = useState(0);
+  const [charIndex, setCharIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
-    const intervalId = setInterval(() => {
-      setCurrentText(texts[index].substring(0, endValue));
-      if (isForward) {
-        setendValue((prev) => prev + 1);
+    const typingSpeed = isDeleting ? 50 : 100;
+    const delay = isDeleting && charIndex === 0 ? 1000 : typingSpeed;
+
+    const type = setTimeout(() => {
+      if (!isDeleting && charIndex < texts[index].length) {
+        setCurrentText((prev) => prev + texts[index][charIndex]);
+        setCharIndex(charIndex + 1);
+      } else if (isDeleting && charIndex > 0) {
+        setCurrentText((prev) => prev.slice(0, -1));
+        setCharIndex(charIndex - 1);
       } else {
-        setendValue((prev) => prev - 1);
+        setIsDeleting(!isDeleting);
+        if (!isDeleting) {
+          setIndex((prevIndex) => (prevIndex + 1) % texts.length);
+        }
       }
-      if (endValue > texts[index].length + 10) {
-        setIsForward(false);
-      }
-      if (endValue < 2.1) {
-        setIsForward(true);
-        setIndex((prev) => prev & texts.length);
-      }
-    }, 50);
+    }, delay);
 
-    return () => clearInterval(intervalId);
-  }, [endValue, isForward, index, texts]);
+    return () => clearTimeout(type);
+  }, [charIndex, isDeleting, index, texts]);
 
-  return <div className="transition ease duration-300">{currenText}</div>;
+  return <span className="transition ease duration-300">{currentText}</span>;
 };
 
 export default TextChange;
