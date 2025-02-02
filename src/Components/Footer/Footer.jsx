@@ -5,56 +5,66 @@ import { FaGithub, FaXing } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <div
-      id="Footer"
-      className="flex justify-around bg-[#465697] text-white p-10 md:p-12 items-center"
-    >
-      <div>
-        <h1 className="text-2xl md:text-6xl font-bold">Let's Connect</h1>
-        <h3 className="text-sm md:text-2xl font-normal">
-          Feel free to reach out for collaboration or a chat!
-        </h3>
+    <div id="Footer" className="bg-[#171d32] text-white py-10 px-6 md:px-20">
+      {/* Upper Section: Title & Contact Info */}
+      <div className="flex flex-col md:flex-row justify-between items-center bg-black bg-opacity-40 p-6 rounded-lg border border-gray-700 shadow-md">
+        {/* Left Section - Heading */}
+        <div className="text-center md:text-left">
+          <h1 className="text-2xl md:text-4xl font-bold">Let's Connect</h1>
+          <p className="text-md md:text-lg font-light mt-2 text-gray-300">
+            Feel free to reach out for collaborations or opportunities!
+          </p>
+        </div>
+
+        {/* Right Section - Contact Info Below Title */}
+        <div className="flex flex-col items-center md:items-start mt-4 md:mt-0 text-gray-300">
+          <div className="flex items-center gap-3">
+            <MdOutlineEmail size={22} className="text-blue-400" />
+            <span className="hover:text-gray-100 transition duration-300">
+              lakhaniabhi.it@gmail.com
+            </span>
+          </div>
+          <div className="flex items-center gap-3 mt-2">
+            <CiLinkedin size={22} className="text-blue-400" />
+            <a
+              href="https://www.linkedin.com/in/abhishek-lakhani-4896271a6/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-gray-100 hover:underline transition duration-300"
+            >
+              LinkedIn
+            </a>
+          </div>
+          <div className="flex items-center gap-3 mt-2">
+            <FaXing size={22} className="text-green-500" />
+            <a
+              href="https://www.xing.com/profile/Abhishek_Lakhani/web_profiles"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-gray-100 hover:underline transition duration-300"
+            >
+              Xing
+            </a>
+          </div>
+          <div className="flex items-center gap-3 mt-2">
+            <FaGithub size={22} className="text-gray-300" />
+            <a
+              href="https://github.com/abhisheklakhani-it"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-gray-100 hover:underline transition duration-300"
+            >
+              GitHub
+            </a>
+          </div>
+        </div>
       </div>
 
-      <ul className="text-sm md:text-xl">
-        <li className="flex gap-2 items-center">
-          <MdOutlineEmail size={20} />
-          <span>lakhaniabhi.it@gmail.com</span>
-        </li>
-        <li className="flex gap-2 items-center">
-          <CiLinkedin size={20} />
-          <a
-            href="https://www.linkedin.com/in/abhishek-lakhani-4896271a6"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:underline"
-          >
-            LinkedIn Profile
-          </a>
-        </li>
-        <li className="flex gap-2 items-center">
-          <FaXing size={20} />
-          <a
-            href="https://www.xing.com/profile/Abhishek_Lakhani/web_profiles"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:underline"
-          >
-            Xing Profile
-          </a>
-        </li>
-        <li className="flex gap-2 items-center">
-          <FaGithub size={20} />
-          <a
-            href="https://github.com/abhisheklakhani-it"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:underline"
-          >
-            GitHub Profile
-          </a>
-        </li>
-      </ul>
+      {/* Lower Section: Copyright */}
+      <div className="text-center text-gray-400 text-sm mt-6 pt-4">
+        © {new Date().getFullYear()} <strong>Abhishek Lakhani</strong> | All
+        Rights Reserved
+      </div>
     </div>
   );
 };

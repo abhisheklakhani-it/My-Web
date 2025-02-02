@@ -6,92 +6,75 @@ const About = () => {
   return (
     <div
       id="About"
-      className="text-white md:flex overflow-hidden items-center md:flex-wrap md:justify-center bg-black shadow-xl mx-0 md:mx-20 bg-opacity-30 rounded-lg p-12"
+      className="text-white flex flex-col md:flex-row items-center justify-center bg-black shadow-xl mx-0 md:mx-20 bg-opacity-30 rounded-lg p-12"
     >
-      <div>
-        <h2 className="text-2xl md:text-4xl font-bold">About</h2>
-        <div className="md:flex flex-wrap flex-col md:flex-row items-center">
-          <img
-            className="md:h-80"
-            src={AboutImg}
-            alt="Profile representation"
-          />
+      {/* Profile Image */}
+      <div className="md:w-1/3 flex justify-center">
+        <img
+          className="md:h-80 rounded-lg shadow-lg"
+          src={AboutImg}
+          alt="Profile representation"
+        />
+      </div>
 
-          <ul>
-            {/* Education */}
-            <div className="flex gap-6 py-4">
-              <IoArrowForward size={30} className="mt-1" />
+      {/* About Section */}
+      <div className="md:w-2/3 mt-8 md:mt-0 md:pl-10">
+        <h2 className="text-3xl md:text-5xl font-bold text-center md:text-left">
+          About Me
+        </h2>
 
-              <span className="max-w-lg">
-                <h1 className="text-xl md:text-2xl font-semibold leading-normal">
-                  Master's in Automotive Software Engineering
-                </h1>
-                <p className="text-sm md:text-md leading-tight">
-                  Currently pursuing a Master's degree at Technische Universität
-                  Chemnitz, specializing in software development, data analysis,
-                  and intelligent systems. My focus areas include AUTOSAR, AI
-                  for automotive applications, and embedded systems, with
-                  hands-on experience in modern automotive technologies.
-                </p>
-              </span>
+        <div className="mt-6 space-y-6">
+          {/* Education */}
+          <div className="flex gap-4 items-start">
+            <IoArrowForward size={30} className="text-blue-500" />
+            <div>
+              <h3 className="text-xl md:text-2xl font-semibold">
+                Master’s in Automotive Software Engineering
+              </h3>
+              <p className="text-sm md:text-md leading-relaxed text-gray-300">
+                Pursuing my{" "}
+                <strong>Master’s at Technische Universität Chemnitz</strong>,
+                specializing in{" "}
+                <strong>automotive software, AI, and embedded systems</strong>.
+                Passionate about building cutting-edge solutions for the
+                automotive industry.
+              </p>
             </div>
+          </div>
 
-            {/* Web Development (Frontend + Backend) */}
-            <div className="flex gap-6 py-4">
-              <IoArrowForward size={30} className="mt-1" />
-
-              <span className="max-w-lg">
-                <h1 className="text-xl md:text-2xl font-semibold leading-normal">
-                  Full-Stack Web Developer
-                </h1>
-                <p className="text-sm md:text-md leading-tight">
-                  Passionate about building modern, scalable web applications
-                  with React.js, TailwindCSS, JavaScript, PHP, and MySQL.
-                  Experienced in API integrations, optimizing database
-                  performance, and developing interactive web solutions,
-                  including a personal portfolio and dynamic applications.
-                </p>
-              </span>
+          {/* Web Development */}
+          <div className="flex gap-4 items-start">
+            <IoArrowForward size={30} className="text-blue-500" />
+            <div>
+              <h3 className="text-xl md:text-2xl font-semibold">
+                Full-Stack Web Developer
+              </h3>
+              <p className="text-sm md:text-md leading-relaxed text-gray-300">
+                Experienced in{" "}
+                <strong>
+                  React.js, TailwindCSS, JavaScript, PHP, and MySQL
+                </strong>
+                . Developed multiple projects, including **scalable web apps and
+                APIs**, focusing on user experience and performance.
+              </p>
             </div>
+          </div>
 
-            {/* Machine Learning & Data Science */}
-            <div className="flex gap-6 py-4">
-              <IoArrowForward size={30} className="mt-1" />
-
-              <span className="max-w-lg">
-                <h1 className="text-xl md:text-2xl font-semibold leading-normal">
-                  Data Science & Machine Learning Practitioner
-                </h1>
-                <p className="text-sm md:text-md leading-tight">
-                  Skilled in machine learning, data visualization, and AI-driven
-                  solutions. Proficient in Python, Pandas, NumPy, Scikit-learn,
-                  and PyTorch, with experience in developing AI-powered
-                  applications, predictive models, and insightful data analysis.
-                  Completed an internship at Edureka, where I worked on
-                  real-world business problems using advanced analytics.
-                </p>
-              </span>
+          {/* Data Science & AI */}
+          <div className="flex gap-4 items-start">
+            <IoArrowForward size={30} className="text-blue-500" />
+            <div>
+              <h3 className="text-xl md:text-2xl font-semibold">
+                Data Science & Machine Learning
+              </h3>
+              <p className="text-sm md:text-md leading-relaxed text-gray-300">
+                Strong foundation in **AI, predictive modeling, and
+                automation**. Proficient in **Python, TensorFlow, and
+                Scikit-learn**. Developed **AI chatbots and real-time analytics
+                dashboards**.
+              </p>
             </div>
-
-            {/* IoT & Smart Systems */}
-            <div className="flex gap-6 py-4">
-              <IoArrowForward size={30} className="mt-1" />
-
-              <span className="max-w-lg">
-                <h1 className="text-xl md:text-2xl font-semibold leading-normal">
-                  IoT & Smart Systems Engineer
-                </h1>
-                <p className="text-sm md:text-md leading-tight">
-                  Developed an IoT-based water quality monitoring system capable
-                  of measuring pH, oxygen levels, temperature, and turbidity
-                  with high accuracy. Designed for practical applications in
-                  agriculture, industrial water purification, and smart city
-                  infrastructure, providing real-time monitoring through a
-                  user-friendly mobile interface.
-                </p>
-              </span>
-            </div>
-          </ul>
+          </div>
         </div>
       </div>
     </div>
